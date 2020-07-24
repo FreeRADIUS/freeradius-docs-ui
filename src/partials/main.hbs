@@ -1,0 +1,9 @@
+<main>
+{{> toolbar}}
+{{#if (eq page.title 'Introduction')}} 
+<div class="banner">
+  <img src="{{or site.url (or siteRootUrl siteRootPath)}}/_/img/fr-docs-banner.svg" alt="The FreeRADIUS Server">
+</div>
+{{/if}}
+{{> article}}
+</main>

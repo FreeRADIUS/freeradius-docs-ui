@@ -1,0 +1,81 @@
+body {
+  -webkit-font-smoothing: auto;
+}
+
+h1 {
+  font-size: var(--size1);
+}
+
+h2 {
+  font-size: var(--size3-5);
+}
+
+h3 {
+  font-size: var(--size4);
+}
+
+h4 {
+  font-size: var(--size5-5);
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: var(--size5-5);
+}
+
+.button {
+  height: auto;
+  display: inline-flex;
+  align-items: center;
+  background: var(--blue20);
+  border: 1px solid var(--blue20);
+  border-radius: 0.15rem;
+  color: white;
+  white-space: nowrap;
+  font-weight: 400;
+  font-size: var(--size5);
+  padding: 15px 20px;
+  line-height: 1.286;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: var(--blue25);
+  border-color: var(--blue25);
+  text-decoration: none;
+}
+
+.sites-nav {
+  position: fixed;
+  z-index: var(--z-index-navbar);
+  top: 0;
+  width: 100%;
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--neutral10);
+  font-size: var(--size6);
+  height: var(--sitenav-height);
+}
+
+.sites-nav a,
+.sites-nav span {
+  color: inherit;
+  padding: 0.5rem;
+}
+
+.sites-nav a:hover {
+  background-color: var(--neutral15);
+}
+
+.banner {
+  margin: 0 2rem;
+  padding: 0 1rem;
+  max-width: 55rem;
+}
+
+.banner img {
+  width: 100%;
+  display: block;
+}

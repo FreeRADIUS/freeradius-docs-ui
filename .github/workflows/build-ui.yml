@@ -1,0 +1,111 @@
+name: Build UI bundle
+
+on:
+  push:
+    branches:
+    - master
+    - stable
+
+jobs:
+  build:
+
+    name: UI bundle
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+
+    steps:
+#
+#  Checkout repo and install required dependencies
+#
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --option=Dpkg::options::=--force-unsafe-io --no-install-recommends ca-certificates wget
+
+    - name: Install Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+
+    - name: Install gulp-cli
+      run: npm install gulp-cli
+
+    - name: Install npm dependencies
+      run: npm install
+
+#
+#  Build the ui-bundle.zip file
+#
+    - name: Build UI
+      run: gulp bundle
+
+#
+#  Get the branch name without the refs/heads/ prefix. Accessible
+#  later in steps.get_branch.outputs.branch.
+#
+    - name: Get branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: get_branch
+
+#
+#  We can't create a release and keep updating it on every commit,
+#  as we need a new tag for every release, and therefore every
+#  commit. If we needed release versions then we could do this
+#  based on tags, but it's not really worth it at the moment (code
+#  below, however).
+#
+#  A stable URL is required, however. Currently there is no
+#  support in Artifacts to get a fixed URL, so that isn't an
+#  option either.
+#
+#  Instead we can just push the (small) zip file into another
+#  orphan branch, and keep amending the commit. The URL will be
+#  stable on github and we can easily update it here.
+#
+    - name: Checkout release branch
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ steps.get_branch.outputs.branch }}-releases
+        path: releases
+        fetch-depth: 0
+
+    - name: Update release branch
+      run: |
+        cd releases
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        cp ../build/ui-bundle.zip .
+        git add ui-bundle.zip
+        git commit --reset-author --amend -m "autocommit latest bundle for ${{ steps.get_branch.outputs.branch }} release"
+        git push -f origin ${{ steps.get_branch.outputs.branch }}-releases:${{ steps.get_branch.outputs.branch }}-releases
+
+#
+#    - name: Create release
+#      id: create_release
+#      uses: actions/create-release@v1
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      with:
+#        tag_name: ${{ steps.get_branch.outputs.branch }}
+#        release_name: Latest ${{ steps.get_branch.outputs.branch }} branch build
+#        body: |
+#          This release is automatically built from the ${{ steps.get_branch.outputs.branch }} branch on every commit.
+#        draft: false
+#        prerelease: false
+#
+#    - name: Upload Release Asset
+#      id: upload-release-asset
+#      uses: actions/upload-release-asset@v1
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      with:
+#        upload_url: ${{ steps.create_release.outputs.upload_url }}
+#        asset_path: ./build/ui-bundle.zip
+#        asset_name: ui-bundle.zip
+#        asset_content_type: application/zip

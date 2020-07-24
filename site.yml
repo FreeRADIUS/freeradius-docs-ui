@@ -1,0 +1,23 @@
+site:
+  title: The FreeRADIUS project - Documentation
+  url: https://www.freeradius.org/
+  # start_page: ROOT:pages:index.adoc
+content:
+  sources:
+  # - url: https://github.com/FreeRADIUS/freeradius-server
+  - url: git@github.com:FreeRADIUS/freeradius-server.git
+    branches: HEAD
+    start_path: doc/antora
+asciidoc:
+  attributes:
+    attribute-missing: skip
+ui:
+  bundle:
+    # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    url: ./build/ui-bundle.zip
+    # snapshot: true
+  # supplemental_files: assets
+  # default_layout: default
+output:
+  clean: true
+  dir: prod-build

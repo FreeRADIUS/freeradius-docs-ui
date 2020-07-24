@@ -1,0 +1,30 @@
+<article class="doc">
+{{#if (eq page.layout '404')}}
+<h1 class="page">{{{or page.title 'Page Not Found'}}}</h1>
+<div class="paragraph">
+<p>The page you&#8217;re looking for does not exist. It may have been moved.</p>
+</div>
+<div class="paragraph">
+<p>If you arrived on this page by clicking on a link, please notify the owner of the site that the link is broken.
+If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
+</div>
+{{else}}
+{{#if page.title}}
+<h1 class="page">{{{page.title}}}</h1>
+{{/if}}
+{{{page.contents}}}
+{{/if}}
+<footer class="article-footer">
+{{#if page.attributes.license}}
+<p>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>
+</p>
+{{/if}}
+
+{{#if page.attributes.copyright}}
+<p>
+  &copy;{{{page.attributes.copyright}}}
+</p>
+{{/if}}
+</footer>
+</article>

@@ -1,0 +1,161 @@
+:root {
+  /* FreeRadius vars */
+  --blue10: rgb(240, 251, 252);
+  --blue20: rgb(0, 165, 227);
+  --blue25: rgb(1, 128, 173);
+  --blue30: rgb(9, 52, 72);
+  --blue40: rgb(5, 26, 36);
+  --neutral10: rgb(247, 247, 247);
+  --neutral12: rgb(224, 224, 224);
+  --neutral15: rgb(225, 231, 232);
+  --neutral20: rgb(163, 163, 163);
+  --neutral25: #999;
+  --neutral30: rgb(102, 102, 102);
+  --neutral40: rgb(51, 51, 51);
+  --neutral50: rgb(34, 34, 34);
+  --purple50: rgb(126, 54, 222);
+  --red50: rgb(247, 0, 0);
+  --green50: rgb(0, 192, 146);
+  --yellow50: rgb(245, 218, 43);
+  --size1: 2rem;
+  --size2: 1.55rem;
+  --size3-5: 1.33rem;
+  --size3: 1.166rem;
+  --size4: 1rem;
+  --size5-5: 0.88rem;
+  --size5: 0.77rem;
+  --size6: 0.66rem;
+  --header-font-family: 'Fira Sans', sans-serif;
+  --alt-font: 'Montserrat', sans-serif;
+  --sitenav-height: 30px;
+  /* colors */
+  --color-white: #fff;
+  --color-smoke-10: #fefefe;
+  --color-smoke-30: #fafafa;
+  --color-smoke-50: #f5f5f5;
+  --color-smoke-70: #f0f0f0;
+  --color-smoke-90: #e1e1e1;
+  --color-gray-10: #c1c1c1;
+  --color-gray-30: #8e8e8e;
+  --color-gray-50: #808080;
+  --color-gray-70: #5d5d5d;
+  --color-jet-20: #4a4a4a;
+  --color-jet-30: #424242;
+  --color-jet-50: #333;
+  --color-jet-70: #222;
+  --color-jet-80: #191919;
+  --color-black: #000;
+  --fr-grey1: #f7f7f7;
+  --fr-grey2: #e1e7e8;
+  /* fonts */
+  --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
+  --body-font-size: 1.0625em; /* 17px */
+  --body-font-size--desktop: 1.125em; /* 18px */
+  --body-font-size--print: 0.9375em; /* 15px */
+  --body-line-height: 1.15;
+  --body-font-color: var(--neutral40);
+  --body-font-family: 'Fira Sans', sans-serif;
+  --body-font-weight-bold: 500;
+  --monospace-font-family: "Roboto Mono", monospace;
+  --monospace-font-weight-bold: 500;
+  /* base */
+  --body-background: var(--color-white);
+  --panel-background: var(--neutral10);
+  --panel-border-color: var(--color-smoke-90);
+  /* navbar */
+  --navbar-background: var(--color-white);
+  --navbar-font-color: var(--neutral40);
+  --navbar_hover-background: none;
+  --navbar-button-background: var(--blue20);
+  --navbar-button-border-color: var(--blue20);
+  --navbar-button-font-color: var(--color-white);
+  --navbar-menu-border-color: var(--color-white);
+  --navbar-menu-background: var(--color-white);
+  --navbar-menu-font-color: var(--body-font-color);
+  --navbar-menu_hover-background: var(--color-smoke-50);
+  /* nav */
+  --nav-background: var(--panel-background);
+  --nav-border-color: var(--color-gray-10);
+  --nav-line-height: 1.35;
+  --nav-heading-font-color: var(--color-jet-30);
+  --nav-muted-color: var(--color-gray-70);
+  --nav-panel-divider-color: var(--color-smoke-90);
+  --nav-secondary-background: var(--color-smoke-70);
+  /* toolbar */
+  --toolbar-background: var(--color-white);
+  --toolbar-border-color: var(--neutral10);
+  --toolbar-font-color: inherit;
+  --toolbar-muted-color: var(--color-gray-30);
+  --page-version-menu-background: var(--color-smoke-70);
+  --page-version-missing-font-color: var(--color-gray-30);
+  /* admonitions */
+  --caution-color: var(--purple50);
+  --caution-on-color: var(--color-white);
+  --important-color: var(--red50);
+  --important-on-color: var(--color-white);
+  --note-color: var(--blue20);
+  --note-on-color: var(--color-white);
+  --tip-color: var(--green50);
+  --tip-on-color: var(--color-white);
+  --warning-color: var(--yellow50);
+  --warning-on-color: var(--color-white);
+  /* doc */
+  --doc-font-color: var(--color-jet-50);
+  --doc-font-size: inherit;
+  --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
+  --doc-line-height: 1.6;
+  --doc-margin: 0 auto;
+  --doc-margin--desktop: 0 2rem;
+  --heading-font-color: var(--color-jet-80);
+  --heading-font-weight: 500;
+  --alt-heading-font-weight: var(--body-font-weight-bold);
+  --section-divider-color: var(--panel-border-color);
+  --link-font-color: var(--blue20);
+  --link_hover-font-color: var(--blue25);
+  --link_unresolved-font-color: var(--important-color);
+  --abstract-background: var(--color-smoke-70);
+  --abstract-font-color: var(--color-jet-20);
+  --abstract-border-color: var(--panel-border-color);
+  --admonition-background: var(--color-white);
+  --admonition-label-font-weight: var(--body-font-weight-bold);
+  --caption-font-color: var(--color-gray-70);
+  --caption-font-weight: normal;
+  --code-background: var(--fr-grey2);
+  --code-font-color: var(--body-font-color);
+  --example-background: var(--color-white);
+  --example-border-color: var(--neutral25);
+  --kbd-background: var(--panel-background);
+  --kbd-border-color: var(--color-gray-10);
+  --pre-background: var(--panel-background);
+  --pre-border-color: var(--panel-border-color);
+  --pre-annotation-font-color: var(--color-gray-10);
+  --quote-background: var(--panel-background);
+  --quote-border-color: var(--color-gray-70);
+  --quote-font-color: var(--color-gray-70);
+  --quote-attribution-font-color: var(--color-gray-30);
+  --sidebar-background: var(--blue10);
+  --table-border-color: var(--neutral15);
+  /* footer */
+  --footer-line-height: var(--doc-line-height);
+  --footer-background: var(--blue40);
+  --footer-font-color: var(--color-white);
+  --footer-link-font-color: var(--neutral20);
+  /* dimensions */
+  --navbar-height: calc(108 / var(--rem-base) * 1rem);
+  --toolbar-height: calc(45 / var(--rem-base) * 1rem);
+  --drawer-height: var(--toolbar-height);
+  --body-top: calc(var(--navbar-height) + var(--sitenav-height));
+  --body-min-height: calc(100vh - var(--body-top));
+  --nav-height: calc(var(--body-min-height) - var(--toolbar-height));
+  --nav-height--desktop: var(--body-min-height);
+  --nav-panel-height: calc(var(--nav-height) - var(--drawer-height));
+  --nav-panel-height--desktop: calc(var(--nav-height--desktop) - var(--drawer-height));
+  --nav-width: calc(270 / var(--rem-base) * 1rem);
+  --doc-max-width: calc(720 / var(--rem-base) * 1rem);
+  --doc-max-width--desktop: calc(990 / var(--rem-base) * 1rem);
+  /* stacking */
+  --z-index-nav: 1;
+  --z-index-toolbar: 2;
+  --z-index-page-version-menu: 3;
+  --z-index-navbar: 4;
+}

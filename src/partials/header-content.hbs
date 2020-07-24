@@ -1,0 +1,42 @@
+<header class="header">
+    <div class="sites-nav">
+      <span>OUR SITES</span>
+      <a href="https://networkradius.com/">NetworkRADIUS</a>
+      <a href="https://wiki.freeradius.org/">FreeRADIUS Wiki</a>
+    </div>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}"><img width="190" src="{{or site.url (or siteRootUrl siteRootPath)}}/_/img/freeradius-logo.svg" alt=""></a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-mid">
+        <a class="navbar-item" href="https://freeradius.org/releases/">Releases</a>
+        <a class="navbar-item" href="https://freeradius.org/documentation/">Documentation</a>
+        <a class="navbar-item" href="https://freeradius.org/modules/">Modules</a>
+        <a class="navbar-item" href="https://freeradius.org/community/">Community</a>
+        <a class="navbar-item" href="https://freeradius.org/about/">About</a>
+        <a class="navbar-item" href="https://freeradius.org/support/">Support</a>
+      </div>
+      <div class="navbar-end">
+        {{!-- <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div> --}}
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://freeradius.org/releases/">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
