@@ -87,9 +87,9 @@ body {
   line-height: 1;
   position: relative;
   /* width: var(--navbar-height); */
-  width: 2.75rem;
+  width: 70px;
+  padding: 20px;
   margin-left: auto;
-  padding: 0;
 }
 
 .navbar-burger span {
