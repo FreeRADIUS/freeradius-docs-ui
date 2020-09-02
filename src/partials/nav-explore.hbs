@@ -2,7 +2,14 @@
   {{#if page.component}}
   <div class="context">
     <span class="title">{{page.component.title}}</span>
-    <span class="version">{{page.componentVersion.displayVersion}}</span>
+    <span class="version">
+      {{page.componentVersion.displayVersion}}
+      <span class="arrow-icon">
+        <svg viewBox="0 0 5 5">
+          <polygon fill="white" points="0,0 5,0 2.5,5"/>
+        </svg>
+      </span>
+    </span>
   </div>
   {{/if}}
   <ul class="components">
