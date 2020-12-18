@@ -18,8 +18,10 @@ Then to build the site using this theme with antora use this command:
 
 `antora site.yml`
 
-To stage the built site use the follwing surge command:
+To stage the built site use the following surge command:
 
 `npx surge prod-build --domain freeradius-wiki.surge.sh`
 
 the site can then be previewed at [https://freeradius-wiki.surge.sh/freeradius-server/latest/](https://freeradius-wiki.surge.sh/freeradius-server/latest/)
+
+Changes to the default theme are Copyright (C) 2020 Network RADIUS SARL
