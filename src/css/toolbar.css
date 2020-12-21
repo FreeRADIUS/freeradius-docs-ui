@@ -66,3 +66,13 @@
 .toolbar .edit-this-page a {
   color: var(--toolbar-muted-color);
 }
+
+.toolbar-licence {
+  display: block;
+  margin-left: auto;
+  padding-right: 3rem;
+}
+
+.toolbar-licence img {
+  height: 1.5rem;
+}
