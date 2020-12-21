@@ -139,6 +139,7 @@
   --footer-line-height: var(--doc-line-height);
   --footer-background: var(--blue40);
   --footer-font-color: var(--color-white);
+  --footer-sponsor-color: var(--color-grey-30);
   --footer-link-font-color: var(--neutral20);
   /* dimensions */
   --navbar-height: calc(108 / var(--rem-base) * 1rem);

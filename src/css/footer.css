@@ -60,16 +60,27 @@ footer.footer {
 }
 
 .footer .icon_small {
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
 }
 
 .footer_logo {
   display: block;
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 
 .footer_social {
   margin-bottom: 20px;
   /* display: flex; */
+}
+
+.footer_sponsor {
+  font-size: var(--size4);
+  margin-bottom: 2rem;
+}
+
+.footer_sponsor p {
+  font-size: 90%;
+  color: var(--footer-sponsor-color);
 }
