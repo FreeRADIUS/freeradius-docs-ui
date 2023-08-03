@@ -1,6 +1,6 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   {{#if page.breadcrumbs}}
-  <img src="{{or site.url (or siteRootUrl siteRootPath)}}/_/img/icon-octo.svg" alt="">
+  <img src="{{uiRootPath}}/img/icon-octo.svg" alt="">
   <ul>
     {{#with page.componentVersion}}
     {{#if (and ./title (not (or ./root (eq @root.page.breadcrumbs.0.content ./title))))}}
