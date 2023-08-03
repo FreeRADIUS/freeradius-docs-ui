@@ -8,7 +8,7 @@ RUN apt-get update && \
         ca-certificates \
         wget
 
-RUN bash -c "$(wget -O - https://deb.nodesource.com/setup_10.x)" && \
+RUN bash -c "$(wget -O - https://deb.nodesource.com/setup_18.x)" && \
     apt-get install $APT_OPTS \
         nodejs
 
